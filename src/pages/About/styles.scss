@@ -1,0 +1,23 @@
+@import "../../css/general";
+
+.page-wrapper {
+  h2 {
+    font-weight: 300;
+    font-size: 2.5rem;
+  }
+  background: $colorGgGray;
+  min-height: 600px;
+  .image-wrap-right {
+    align-items: flex-end;
+    display: flex;
+  }
+  .customer-satisfaction {
+    max-width: 200px;
+    margin: 10px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .image-wrap-right {display: none !important;}
+}
+

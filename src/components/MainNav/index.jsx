@@ -1,0 +1,62 @@
+import React from 'react';
+import { Navbar, Nav, NavDropdown, Container} from 'react-bootstrap';
+import './style.scss';
+import Logo from '../../assets/images/painting-logo.png';
+
+import configs from '../../assets/configs';
+
+class MainNav extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            path: window.location.pathname.split('/')[1]
+        };
+        console.log(this.state.path);
+        this.checkIfActive = this.checkIfActive.bind(this);
+    }
+    componentDidMount() {
+        let classNameIs;
+        if (this.state.path === '') {
+            classNameIs = 'home';
+        }
+        else {
+            classNameIs = this.state.path;
+        }
+        document.getElementsByTagName('body')[0].className = classNameIs;
+    }
+    checkIfActive (given) {
+        return this.state.path === given;
+    }
+    render () {
+        return (
+            <Container className="nav-container">
+                <Navbar expand="lg" bg="dark" variant="light">
+                    <Navbar.Brand href="/">
+                        <img src={Logo} alt={'Company Name'} className={'logo-top'}/>
+                        <p>{configs.companyName}</p>
+                        {/*<img src={Logo2} alt={'Decoration V.V'} className={'logo-top-mobile'}/>*/}
+                    </Navbar.Brand>
+                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                    <Navbar.Collapse id="responsive-navbar-nav">
+                        <Nav className="ml-auto">
+                            <Nav.Link href={`${process.env.PUBLIC_URL}/`} className={this.checkIfActive('') ? 'active' : ''}>Home</Nav.Link>
+                            <Nav.Link href={`${process.env.PUBLIC_URL}/about`} className={this.checkIfActive('about') ? 'active' : ''}>About</Nav.Link>
+                            <NavDropdown title="Services" id="basic-nav-dropdown" className={this.checkIfActive('service') ? 'active' : ''}>
+                                <NavDropdown.Item href={`${process.env.PUBLIC_URL}/service/commercial-interior-painting`}>Commercial Interior Painting</NavDropdown.Item>
+                                <NavDropdown.Item href={`${process.env.PUBLIC_URL}/service/residential-interior-painting`}>Residential Interior Painting</NavDropdown.Item>
+                                <NavDropdown.Item href={`${process.env.PUBLIC_URL}/service/plaster-and-drywall-services`}>Plaster and Drywall Services</NavDropdown.Item>
+                            </NavDropdown>
+                            <Nav.Link href={`${process.env.PUBLIC_URL}/gallery`} className={this.checkIfActive('gallery') ? 'active' : ''}>Gallery</Nav.Link>
+                            <Nav.Link href={`${process.env.PUBLIC_URL}/faq`} className={this.checkIfActive('faq') ? 'active' : ''}>FAQ</Nav.Link>
+                            <Nav.Link href={`${process.env.PUBLIC_URL}/get-a-quote`} className={this.checkIfActive('get-a-quote') ? 'active' : ''}>Get a Quote</Nav.Link>
+                            <Nav.Link href={`${process.env.PUBLIC_URL}/contact`} className={this.checkIfActive('contact') ? 'active' : ''}>Contacts</Nav.Link>
+                            <Nav.Link href="tel:5144760669">| <span>{configs.phone}</span></Nav.Link>
+                        </Nav>
+                    </Navbar.Collapse>
+                </Navbar>
+            </Container>
+        )
+    }
+}
+
+export default MainNav;
