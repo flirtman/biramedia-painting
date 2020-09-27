@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Fade } from 'react-reveal';
 import './styles.scss';
 import MainNav from "../../components/MainNav";
@@ -33,6 +33,9 @@ const Contacts = (props) => {
         backgroundRepeat: 'no-repeat',
         height: '85vh'
     };
+    useEffect( () =>{
+        document.title = `${configs.companyName} | Painters in ${configs.greatCity} and surrounding areas`;
+    });
     return (
         <div className="page-wrapper">
             <div style={setStyle}>

@@ -1,5 +1,5 @@
-import React from 'react';
-import {Container, Row, Col, Fade} from 'react-bootstrap';
+import React, {useEffect} from 'react';
+import {Container, Row, Col} from 'react-bootstrap';
 
 import './styles.scss';
 import MainNav from "../../components/MainNav";
@@ -14,6 +14,9 @@ import configs from "../../assets/configs";
 import ServiceBoxes  from '../../components/ServiceBoxes';
 
 const About = (props) => {
+    useEffect( () =>{
+        document.title = `${configs.companyName} | Painters in ${configs.greatCity} and surrounding areas`;
+    });
     return (
         <div className="page-wrapper">
             <MainNav/>
@@ -24,7 +27,7 @@ const About = (props) => {
                 <Row>
                     <Col md={4} className={'sm-hidden'}>
                         <div className="image-wrap-right">
-                            <img src={Img1} style={{'width' : '100%'}}/>
+                            <img src={Img1} style={{'width' : '100%'}} alt=""/>
                         </div>
                     </Col>
                     <Col md={8}>
@@ -70,7 +73,7 @@ const About = (props) => {
                             expert skills and carefulness is what makes us stand out from the competition.
                             So if want to know more, feel free to contact us by phone or email. Our hard work shows you how we appreciate your business.</p>
 
-                        <img src={Img2} alt="" className="customer-satisfaction"/>
+                        <img src={Img2} className="customer-satisfaction" alt=""/>
                         <div className="button-blue">
                             <a href={`${process.env.PUBLIC_URL}/get-a-quote`}>Request Service</a>
                         </div>

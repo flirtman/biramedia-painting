@@ -1,8 +1,7 @@
 import React from "react";
 import './styles.scss';
-import BuildIcon from "@material-ui/icons/Build";
 import configs from "../../assets/configs";
-import {Nav, NavDropdown} from "react-bootstrap";
+import {Nav} from "react-bootstrap";
 
 const ServicesSider = () => {
   return (

@@ -4,6 +4,7 @@ import './style.scss';
 import Logo from '../../assets/images/painting-logo.png';
 
 import configs from '../../assets/configs';
+import FormatAlignRightIcon from '@material-ui/icons/FormatAlignRight';
 
 class MainNav extends React.Component {
     constructor(props) {
@@ -30,13 +31,15 @@ class MainNav extends React.Component {
     render () {
         return (
             <Container className="nav-container">
-                <Navbar expand="lg" bg="dark" variant="light">
+                <Navbar expand="lg" bg="dark" variant="light" sticky={'top'}>
                     <Navbar.Brand href="/">
                         <img src={Logo} alt={'Company Name'} className={'logo-top'}/>
                         <p>{configs.companyName}</p>
                         {/*<img src={Logo2} alt={'Decoration V.V'} className={'logo-top-mobile'}/>*/}
                     </Navbar.Brand>
-                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                    <Navbar.Toggle aria-controls="basic-navbar-nav">
+                        <FormatAlignRightIcon/>
+                    </Navbar.Toggle>
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="ml-auto">
                             <Nav.Link href={`${process.env.PUBLIC_URL}/`} className={this.checkIfActive('') ? 'active' : ''}>Home</Nav.Link>

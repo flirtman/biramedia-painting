@@ -31,12 +31,12 @@ footer {
       font-size: 1rem;
       line-height: 2.3em;
       svg {
-        color: $colorBlueBright;
+        color: $colorMainBright;
       }
       a {
         color: white;
         &:hover {
-          color: $colorBlueBright;
+          color: $colorMainBright;
         }
       }
     }
@@ -53,7 +53,7 @@ footer {
       a {
         color: white;
         &:hover {
-          color: $colorBlueBright;
+          color: $colorMainBright;
         }
       }
     }

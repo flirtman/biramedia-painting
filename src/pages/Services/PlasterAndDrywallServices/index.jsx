@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import MainNav from "../../../components/MainNav";
 import {Col, Container, Row} from "react-bootstrap";
 import {Fade} from "react-reveal";
@@ -6,6 +6,7 @@ import ServicesSider from "../../../components/ServicesSider";
 import BlueQuoteStripe from "../../../components/BlueQuoteStripe";
 import Footer from "../../../components/Footer";
 import './styles.scss';
+import configs from "../../../assets/configs";
 
 const PlasterAndDrywallServices = () => {
     const setStyle={
@@ -14,6 +15,9 @@ const PlasterAndDrywallServices = () => {
         backgroundRepeat: 'no-repeat',
         height: '100vh'
     };
+    useEffect( () =>{
+        document.title = `${configs.companyName} | Painters in ${configs.greatCity} and surrounding areas`;
+    });
     return (
         <div className="page-wrapper">
             <div style={setStyle}>

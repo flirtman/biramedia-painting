@@ -1,3 +1,4 @@
+import React from "react";
 import {Fade} from "react-reveal";
 import {Col, Container, Nav, Row} from "react-bootstrap";
 import ContactSupportIcon from "@material-ui/icons/ContactSupport";
@@ -14,7 +15,7 @@ import PinterestIcon from "@material-ui/icons/Pinterest";
 import FormatPaintIcon from '@material-ui/icons/FormatPaint';
 import QueryBuilderIcon from "@material-ui/icons/QueryBuilder";
 import AccountTreeIcon from "@material-ui/icons/AccountTree";
-import React from "react";
+import ScrollUpButton from "react-scroll-up-button";
 
 import './styles.scss';
 
@@ -78,6 +79,7 @@ const Footer = () => {
                     </div>
                 </Container>
             </Fade>
+            <ScrollUpButton/>
         </footer>
     )
 };

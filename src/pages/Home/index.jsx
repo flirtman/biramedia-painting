@@ -1,14 +1,10 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Fade, Slide} from 'react-reveal';
 import './styles.scss';
 import MainNav from "../../components/MainNav";
-import {Col, Row, Container} from 'react-bootstrap';
+import {Col, Row} from 'react-bootstrap';
 
 import Background from '../../assets/images/background_01.jpg';
-import ImgBox1 from '../../assets/images/inner_11.jpg';
-import ImgBox2 from '../../assets/images/inner_12.jpg';
-import ImgBox3 from '../../assets/images/inner_13.jpg';
-
 import ImgSales1 from '../../assets/images/phone-ring.png';
 import ImgSales2 from '../../assets/images/worenty.png';
 import ImgSales3 from '../../assets/images/lisence.png';
@@ -22,31 +18,25 @@ import BlueQuoteStripe  from '../../components/BlueQuoteStripe';
 import ServiceBoxes  from '../../components/ServiceBoxes';
 import configs from "../../assets/configs";
 
-import SERVICE_LEGENDS from '../../assets/images/SERVICE-LEGENDS.jpg';
-import OUR_GOAL from '../../assets/images/OUR-GOAL.jpg';
-import OUR_CLIENTS from '../../assets/images/OUR-CLIENTS.jpg';
-import OUR_PRIMARY_PURPOSE from '../../assets/images/OUR-PRIMARY-PURPOSE.jpg';
-
 import BestHVACImg from '../../assets/images/air-conditioner-installation-Best-HVAC.jpg';
 import EcoFriendlyLogoImg from '../../assets/images/eco-friendly-logo.png';
 
-import AC_INSTALLATION from '../../assets/images/AC_INSTALLATION.jpg';
-import AC_REPAIR from '../../assets/images/AC_REPAIR.jpg';
-import AC_MAINTENANCE from '../../assets/images/AC_MAINTENANCE.jpg';
+import painting_specialists from '../../assets/images/painting_specialists.jpg';
+import respecting_customers from '../../assets/images/respecting_customers.jpg';
+import the_full_package from '../../assets/images/the_full_package.jpg';
 
 import Footer from '../../components/Footer';
 
-const Home = (props) => {
+const Home = () => {
     const setStyle={
         backgroundImage: "url(" + Background + ")",
-        backgroundPosition: 'center',
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
-        height: '100vh'
     };
+    useEffect( () =>{
+        document.title = `${configs.companyName} | Painters in ${configs.greatCity} and surrounding areas`;
+    });
     return (
         <div className="page-wrapper">
-            <div style={setStyle}>
+            <div style={setStyle} className="page-wrapper-content">
                 <MainNav/>
                 <div className="container">
                     <div className="header-wrapper">
@@ -143,7 +133,7 @@ const Home = (props) => {
                                     <Col xs={12}>
                                         <div className="ac-section-right-content-point-wrap">
                                             <span>
-                                                <img src={AC_INSTALLATION} alt=""/>
+                                                <img src={painting_specialists} alt=""/>
                                             </span>
                                             <span>
                                                 <h4>Painting Specialists</h4>
@@ -159,7 +149,7 @@ const Home = (props) => {
                                     <Col xs={12}>
                                         <div className="ac-section-right-content-point-wrap">
                                             <span>
-                                                <img src={AC_REPAIR} alt=""/>
+                                                <img src={respecting_customers} alt=""/>
                                             </span>
                                             <span>
                                                 <h4>Respecting Customers</h4>
@@ -177,7 +167,7 @@ const Home = (props) => {
                                     <Col xs={12}>
                                         <div className="ac-section-right-content-point-wrap">
                                             <span>
-                                                <img src={AC_MAINTENANCE} alt=""/>
+                                                <img src={the_full_package} alt=""/>
                                             </span>
                                             <span>
                                                 <h4>The Full Package</h4>

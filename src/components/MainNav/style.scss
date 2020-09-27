@@ -1,4 +1,6 @@
 @import '../../css/general';
+
+
 .nav-link {
   font-family: $Mukta;
   font-weight: 400;
@@ -8,13 +10,24 @@
   padding: 12px 10px;
 }
 .active.nav-link {
-  border-bottom: 2px solid $colorBlueRegular;
+  border-bottom: 2px solid $colorMainRegular;
 }
 .dropdown-toggle::after {
-  color: $colorBlueRegular
+  color: $colorMainRegular
 }
 .bg-dark {
   background-color: white !important;
+}
+.navbar-light .navbar-toggler {
+  border: 0;
+}
+.navbar-toggler {
+  padding: 0;
+}
+.nav-container .MuiSvgIcon-root {
+  font-size: 2rem !important;
+  color: $colorMainDark;
+  outline: none;
 }
 .navbar-brand {
   padding-bottom: 0;
@@ -25,7 +38,7 @@
     float: left;
   }
   p {
-    color: $colorBlueRegular;
+    color: $colorMainRegular;
     font-size: 0.9rem;
     font-weight: 600;
     margin-left: 50px;
@@ -35,7 +48,7 @@
 .dropdown-menu {
   transition: all ease 500ms;
   border: 0;
-  border-top: 4px solid $colorBlueRegular;
+  border-top: 4px solid $colorMainRegular;
   border-radius: 0;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
   padding: 0;
@@ -47,12 +60,12 @@
 }
 .dropdown-item:hover {
   background: #fff;
-  box-shadow: inset 7px 0 0 -2px $colorBlueRegular;
-  color: $colorBlueRegular;
+  box-shadow: inset 7px 0 0 -2px $colorMainRegular;
+  color: $colorMainRegular;
 }
 .dropdown-item:active {
   background: #fff;
-  color: $colorBlueRegular;
+  color: $colorMainRegular;
 }
 
 @media (min-width: 992px) {

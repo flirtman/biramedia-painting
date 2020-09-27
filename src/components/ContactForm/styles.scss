@@ -9,7 +9,7 @@
     margin-top: 50px;
   }
   .btn-submit-form {
-    background: $colorBlueRegular;
+    background: $colorMainRegular;
     border-radius: 50%;
     color: white;
     display: inline-flex;
@@ -24,7 +24,7 @@
     }
     &:hover {
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
-      background: $colorBlueBright;
+      background: $colorMainBright;
     }
   }
 }

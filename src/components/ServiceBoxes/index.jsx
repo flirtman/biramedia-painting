@@ -23,7 +23,7 @@ const ServiceBoxes = () => {
                     <p>
                         Looking to paint your home? We carry all the professional painting tools. Our painting supplies are in all kinds of colors and styles. We have something for everyone!
                     </p>
-                    <div className="box-btn"><a href="">Read More</a></div>
+                    <div className="box-btn"><a href={`${process.env.PUBLIC_URL}/service/residential-interior-painting`}>Read More</a></div>
                 </div>
             </div>
             <div className="box-wrapper">
@@ -36,7 +36,7 @@ const ServiceBoxes = () => {
                     <p>
                         Are you considering painting the interior of your commercial property? No project is too big or small. Whether it is retail, industrial or institutional jobs, let us bring our fast and efficient painting services to you.
                     </p>
-                    <div className="box-btn"><a href="">Read More</a></div>
+                    <div className="box-btn"><a href={`${process.env.PUBLIC_URL}/service/commercial-interior-painting`}>Read More</a></div>
                 </div>
             </div>
             <div className="box-wrapper">
@@ -49,7 +49,7 @@ const ServiceBoxes = () => {
                     <p>
                         We treat plaster and drywall problems and not the symptoms. We repair and patch your drywall, so that your next coat of paint is beautiful and long lasting.
                     </p>
-                    <div className="box-btn"><a href="/">Read More</a></div>
+                    <div className="box-btn"><a href={`${process.env.PUBLIC_URL}/service/plaster-and-drywall-services`}>Read More</a></div>
                 </div>
             </div>
         </div>

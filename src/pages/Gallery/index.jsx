@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Container, Row, Col} from 'react-bootstrap';
 import './styles.scss';
 import MainNav from "../../components/MainNav";
@@ -16,6 +16,7 @@ import img7 from '../../assets/images/gallery/img7.jpg';
 import img8 from '../../assets/images/gallery/img8.jpg';
 import img9 from '../../assets/images/gallery/img9.jpg';
 import img10 from '../../assets/images/gallery/img10.jpg';
+import img11 from '../../assets/images/gallery/img11.jpg';
 
 import thumbImg1 from '../../assets/images/gallery/thumbs/img1.jpg';
 import thumbImg2 from '../../assets/images/gallery/thumbs/img2.jpg';
@@ -27,9 +28,11 @@ import thumbImg7 from '../../assets/images/gallery/thumbs/img7.jpg';
 import thumbImg8 from '../../assets/images/gallery/thumbs/img8.jpg';
 import thumbImg9 from '../../assets/images/gallery/thumbs/img9.jpg';
 import thumbImg10 from '../../assets/images/gallery/thumbs/img10.jpg';
+import thumbImg11 from '../../assets/images/gallery/thumbs/img11.jpg';
 import ServicesSider from "../../components/ServicesSider";
 import Brands from "../../components/Brands";
 import BlueQuoteStripe from "../../components/BlueQuoteStripe";
+import configs from "../../assets/configs";
 
 
 
@@ -38,62 +41,76 @@ const IMAGES = [
         src: img1,
         thumbnail: thumbImg1,
         thumbnailWidth: 320,
+        thumbnailHeight: 182
     },
     {
         src: img2,
         thumbnail: thumbImg2,
         thumbnailWidth: 320,
+        thumbnailHeight: 182
     },
     {
         src: img3,
         thumbnail: thumbImg3,
         thumbnailWidth: 320,
+        thumbnailHeight: 182
     },
     {
         src: img4,
         thumbnail: thumbImg4,
         thumbnailWidth: 320,
+        thumbnailHeight: 182
     },
     {
         src: img5,
         thumbnail: thumbImg5,
         thumbnailWidth: 320,
+        thumbnailHeight: 182
     },
     {
         src: img6,
         thumbnail: thumbImg6,
         thumbnailWidth: 320,
+        thumbnailHeight: 182
     },
     {
         src: img7,
         thumbnail: thumbImg7,
         thumbnailWidth: 320,
+        thumbnailHeight: 182
     },
     {
         src: img8,
         thumbnail: thumbImg8,
         thumbnailWidth: 320,
+        thumbnailHeight: 182
     },
     {
         src: img9,
         thumbnail: thumbImg9,
         thumbnailWidth: 320,
+        thumbnailHeight: 182
     },
     {
         src: img10,
         thumbnail: thumbImg10,
         thumbnailWidth: 320,
+        thumbnailHeight: 182
+    },
+    {
+        src: img11,
+        thumbnail: thumbImg11,
+        thumbnailWidth: 320,
+        thumbnailHeight: 182
     },
 ];
 
 
 
 const Gallery = (props) => {
-    const setStyle={
-        backgroundPosition: 'center',
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
-    };
+    useEffect( () =>{
+        document.title = `${configs.companyName} | Painters in ${configs.greatCity} and surrounding areas`;
+    });
     return (
         <div className="page-wrapper">
             <div>
@@ -104,12 +121,12 @@ const Gallery = (props) => {
                             <h1>Gallery</h1>
                         </div>
                         <Row>
-                            <Col md={8}>
+                            <Col md={9}>
                                 <Fade>
                                     <GalleryLib images={IMAGES}/>
                                 </Fade>
                             </Col>
-                            <Col md={4}>
+                            <Col md={3}>
                                 <Fade>
                                     <ServicesSider/>
                                 </Fade>

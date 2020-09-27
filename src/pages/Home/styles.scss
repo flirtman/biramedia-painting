@@ -14,6 +14,17 @@
     font-size: 1.3rem;
   }
 }
+.page-wrapper-content {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+@media only screen and (max-width: 991px){
+  .page-wrapper-content {
+    background-position: left center;
+  }
+}
 .ecoFriendlyLogo {
   float: right;
   max-width: 100px;
@@ -63,7 +74,7 @@
       max-width: 560px;
       h3 {
         span {
-          color: $colorBlueBright;
+          color: $colorMainBright;
         }
       }
       .about-section-left-content-point-wrap {
@@ -124,7 +135,7 @@
       max-width: 560px;
       h3 {
         span {
-          color: $colorBlueBright;
+          color: $colorMainBright;
         }
       }
       .ac-section-right-content-point-wrap {
