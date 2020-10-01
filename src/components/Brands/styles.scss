@@ -15,12 +15,28 @@
 .brands-list {
   max-width: 1200px;
   margin: 15px auto;
+  text-align: center;
   li {
     list-style: none;
-    display: inline;
+    display: inline-flex;
     img {
       margin: 5px;
-      max-width: 100px;
+      max-width: 150px;
+    }
+    .color-name {
+      font-size: 1.2rem;
+      line-height: 1.1;
+      font-weight: 800;
+      display: block;
+    }
+    .brand-name {
+      font-size: 0.7rem;
+      color: #717171;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .03rem;
+      line-height: 1.2;
+      display: block;
     }
   }
 }

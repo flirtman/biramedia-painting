@@ -10,9 +10,8 @@ class MainNav extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            path: window.location.pathname.split('/')[1]
+            path: window.location.pathname.split(process.env.PUBLIC_URL + '/')[1]
         };
-        console.log(this.state.path);
         this.checkIfActive = this.checkIfActive.bind(this);
     }
     componentDidMount() {
@@ -35,7 +34,6 @@ class MainNav extends React.Component {
                     <Navbar.Brand href="/">
                         <img src={Logo} alt={'Company Name'} className={'logo-top'}/>
                         <p>{configs.companyName}</p>
-                        {/*<img src={Logo2} alt={'Decoration V.V'} className={'logo-top-mobile'}/>*/}
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav">
                         <FormatAlignRightIcon/>

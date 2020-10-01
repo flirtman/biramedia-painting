@@ -15,7 +15,6 @@ $leadChannel = $data['leadChannel'];
 $messageTxt = $data['message'];
 $phone = $data['phone'];
 $serviceName = $data['serviceName'];
-$serviceType = $data['serviceType'];
 $state = $data['state'];
 $whenToServe = $data['whenToServe'];
 $zip = $data['zip'];
@@ -40,7 +39,6 @@ $message = '<table style="width:100%">
                 <tr><td>zip: '. $zip .' </td></tr>
                 <tr><td>Service name: '. $serviceName .' </td></tr>
                 <tr><td>When to serve: '. $whenToServe .' </td></tr>
-                <tr><td>Service type: '. $serviceType .' </td></tr>
                 <tr><td>Lead channel: '. $leadChannel .' </td></tr>
                 <tr><td>Budget: '. $budget .' </td></tr>
                 <tr><td>Message: '. $messageTxt .' </td></tr>

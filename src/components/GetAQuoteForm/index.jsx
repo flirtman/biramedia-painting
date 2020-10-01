@@ -17,10 +17,6 @@ import Input from '@material-ui/core/Input';
 import ListItemText from '@material-ui/core/ListItemText';
 import Checkbox from '@material-ui/core/Checkbox';
 
-import Radio from '@material-ui/core/Radio';
-import RadioGroup from '@material-ui/core/RadioGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormLabel from '@material-ui/core/FormLabel';
 import axios from "axios";
 import swal from "sweetalert";
 
@@ -54,10 +50,10 @@ const MenuProps = {
 };
 
 const services = [
-    'Air Conditioning',
-    'Heating',
-    'Air Quality',
-    'Water Heaters'
+    'Commercial interior',
+    'Residential interior',
+    'Plaster and drywall',
+    'Other'
 ];
 
 const GetAQuoteForm = () => {
@@ -118,10 +114,6 @@ const GetAQuoteForm = () => {
         setWhenToServe(event.target.value);
     };
 
-    const [serviceType, setServiceType] = React.useState('');
-    const handleServiceTypeChange = (event) => {
-        setServiceType(event.target.value);
-    };
 
     const [leadChannel, setLeadChannel] = React.useState('');
     const handleLeadChannelChange = (event) => {
@@ -152,7 +144,6 @@ const GetAQuoteForm = () => {
     const [budgetError, setBudgetError] = useState(false);
     const [serviceNameError, setServiceNameError] = useState(false);
     const [whenToServeError, setWhenToServeError] = useState(false);
-    const [serviceTypeError, setServiceTypeError] = useState(false);
     const [leadChannelError, setLeadChannelError] = useState(false);
 
 
@@ -173,7 +164,6 @@ const GetAQuoteForm = () => {
         errorsValidator.zip             ? setZipError(false) : setZipError(true);
         errorsValidator.serviceName     ? setServiceNameError(false) : setServiceNameError(true);
         errorsValidator.whenToServe     ? setWhenToServeError(false) : setWhenToServeError(true);
-        errorsValidator.serviceType     ? setServiceTypeError(false) : setServiceTypeError(true);
         errorsValidator.leadChannel     ? setLeadChannelError(false) : setLeadChannelError(true);
         errorsValidator.budget          ? setBudgetError(false) : setBudgetError(true);
         errorsValidator.message         ? setMessageError(false) : setMessageError(true);
@@ -191,7 +181,6 @@ const GetAQuoteForm = () => {
             zip : zip,
             serviceName : serviceName.join(', '),
             whenToServe : whenToServe,
-            serviceType : serviceType,
             leadChannel : leadChannel,
             budget : budget,
             message : message,
@@ -243,7 +232,6 @@ const GetAQuoteForm = () => {
             zip: zipRGEX.test(zip.trim()),
             serviceName: serviceName.length > 0 ,
             whenToServe: customRGEX.test(whenToServe.trim()),
-            serviceType: customRGEX.test(serviceType.trim()),
             leadChannel: customRGEX.test(leadChannel.trim()),
             budget: budgetRGEX.test(budget.trim()),
             message: txtRGEX.test(message.trim())
@@ -264,7 +252,6 @@ const GetAQuoteForm = () => {
 
         setServiceName([]);
         setWhenToServe('');
-        setServiceType('');
         setLeadChannel('');
         setBudget('');
 
@@ -282,7 +269,6 @@ const GetAQuoteForm = () => {
         setMessageError(false);
         setServiceNameError(false);
         setWhenToServeError(false);
-        setServiceTypeError(false);
         setLeadChannelError(false);
     };
 
@@ -366,25 +352,6 @@ const GetAQuoteForm = () => {
                                 <MenuItem value={'As soon as possible'}>As soon as possible</MenuItem>
                                 <MenuItem value={'At a later date'}>At a later date</MenuItem>
                             </Select>
-                        </FormControl>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col>
-                        <FormControl component="fieldset" fullWidth error={serviceTypeError} required>
-                            <FormLabel component="legend">
-                                Is this for commercial or residential services?
-                            </FormLabel>
-                            <RadioGroup
-                                aria-label="gender"
-                                name="serviceType"
-                                value={serviceType}
-                                onChange={handleServiceTypeChange}
-                                row
-                            >
-                                <FormControlLabel value="commercial" control={<Radio />} label="Commercial" />
-                                <FormControlLabel value="residential" control={<Radio />} label="Residential" />
-                            </RadioGroup>
                         </FormControl>
                     </Col>
                 </Row>
