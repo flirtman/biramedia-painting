@@ -43,11 +43,12 @@ const Home = () => {
                         <div style={{maxWidth: '600px'}}>
                             <Fade left cascade>
                                 <h1 className="">
-                                    <span className="blue-text">Painting</span> <span className={'gray-regular-txt'}>Services</span>
+                                    Professional <span className="blue-text">Painters</span> <br/>
+                                    in <span className="blue-text">{configs.greatCity}</span>
                                 </h1>
                             </Fade>
                             <Fade>
-                                <p className="">{configs.companyName} are here when you need us to service both your residential and commercial properties.</p>
+                                <p className="">{configs.companyName} is here when you need us to service both your residential and commercial properties.</p>
                                 <div className="">
                                     <div className="button-blue">
                                         <a href={`${process.env.PUBLIC_URL}/get-a-quote`}>Request Service</a>
